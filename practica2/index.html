@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Prompt Engineer Workspace</title>
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<video autoplay muted loop id="videoFondo">
+    <source src="assets/fondo.mp4" type="video/mp4">
+</video>
+
+<div class="top">
+  <h1>🧪 Prompt Engineer Workspace</h1>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <span id="badgeToken">🍪 Sin sesión</span>
+    <button id="btnLogin">Iniciar sesión (emitir token)</button>
+  </div>
+</div>
+
+<div class="cols">
+  <div class="panel">
+    <h2>⭐ Prompts Favoritos</h2>
+    <div class="sub">Deben sobrevivir a reinicios del navegador</div>
+    <div id="listaFavoritos"></div>
+    <button id="btnGuardarFav">+ Guardar prompt actual</button>
+  </div>
+
+  <div class="panel">
+    <h2>💬 Conversación actual</h2>
+    <div class="sub">Pestaña duplicada = hilo nuevo en blanco</div>
+    <div id="conversacion"></div>
+    <div class="fila">
+      <input id="prompt" type="text" placeholder="Escribe tu prompt..." autocomplete="off">
+      <button id="btnEnviar">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<div id="modal">
+  <div class="caja">
+    <h3>⚠ Sesión expirada (401)</h3>
+    <p>Tu token venció. La conversación actual se borró,
+       pero tus favoritos siguen intactos.</p>
+    <button id="btnCerrarModal">Entendido</button>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
